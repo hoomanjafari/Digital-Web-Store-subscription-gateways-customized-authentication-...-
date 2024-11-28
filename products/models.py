@@ -24,7 +24,7 @@ class Product(models.Model):
     title = models.CharField(max_length=99, verbose_name='Title')
     description = models.TextField(verbose_name='Description')
     category = models.ManyToManyField('Category', verbose_name='Categories')
-    image = models.ImageField(upload_to='products/%y%m%d')
+    image = models.ImageField(upload_to='products/%y%m%d', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated_at = models.DateTimeField(auto_now=True)
 
@@ -45,7 +45,7 @@ class File(models.Model):
     )
 
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    title = models.CharField(max_length=99, verbose_name='Title')
+    title = models.CharField(max_length=99, verbose_name='Title', null=True, blank=True)
     file = models.FileField(upload_to='files/%y%m%d', verbose_name='File')
     file_type = models.PositiveSmallIntegerField(choices=FILE_TYPES, verbose_name='File Type', default=2)
     created = models.DateTimeField(auto_now_add=True)
