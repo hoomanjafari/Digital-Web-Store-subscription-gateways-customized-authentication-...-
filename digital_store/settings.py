@@ -139,10 +139,6 @@ MEDIA_URL = '/media/'
 
 # authentication
 AUTH_USER_MODEL = 'accounts.User'
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'accounts.authentication.CustomBackend',
-]
 REST_FRAMEWORK = {  # to create token for user authentication
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
