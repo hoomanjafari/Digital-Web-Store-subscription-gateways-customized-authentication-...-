@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     # third party
     'rest_framework',
     'rest_framework_simplejwt',   # to create token for user authentication by simplejwt
-    'rest_framework_simplejwt.token_blacklist',     # this is for logout user and U SHOULD MIGRATE FOR IT
 
     # local
     'products.apps.ProductsConfig',

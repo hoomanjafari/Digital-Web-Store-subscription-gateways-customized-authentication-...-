@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .serializers import (CategorySerializer, ProductSerializer, FileSerializer)
 from .models import (Category, Product, File)
+from accounts.utils import IsTokenValid # token_valid
 
 
 class CategoriesView(APIView):
@@ -36,7 +37,7 @@ class ProductsView(APIView):
 
 
 class ProductDetailView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsTokenValid]
 
     def get(self, request, **kwargs):
         try:

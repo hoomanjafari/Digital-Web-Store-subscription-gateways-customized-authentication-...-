@@ -33,7 +33,7 @@ class FileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = File
-        fields = ['title', 'file', 'created', 'file_type', 'id', 'product']
+        fields = ['title', 'created', 'file_type', 'id', 'product']
 
     # to show file type text instead of 1 2 3
     def get_file_type(self, obj):
