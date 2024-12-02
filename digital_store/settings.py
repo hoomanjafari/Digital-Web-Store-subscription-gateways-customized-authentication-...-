@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     # local
     'products.apps.ProductsConfig',
     'accounts.apps.AccountsConfig',
+    'subscriptions.apps.SubscriptionsConfig',
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -184,3 +186,7 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+# gateway Zarin Pal
+SANDBOX = False
+MERCHANT = ''  # enter the real merchant code
